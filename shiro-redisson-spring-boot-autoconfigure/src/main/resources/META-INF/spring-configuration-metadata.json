@@ -1,0 +1,66 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.github.fartherp.spring.boot.shiro.autoconfigure.ShiroRedissonProperties",
+      "name": "shiro.redisson",
+      "type": "com.github.fartherp.spring.boot.shiro.autoconfigure.ShiroRedissonProperties"
+    },
+    {
+      "name": "shiro.redisson.cache",
+      "type": "com.github.fartherp.spring.boot.shiro.autoconfigure.ShiroRedissonProperties$ShiroRedissonCache",
+      "sourceType": "com.github.fartherp.spring.boot.shiro.autoconfigure.ShiroRedissonProperties",
+      "sourceMethod": "getCache()"
+    },
+    {
+      "name": "shiro.redisson.session",
+      "type": "com.github.fartherp.spring.boot.shiro.autoconfigure.ShiroRedissonProperties$ShiroRedissonSession",
+      "sourceType": "com.github.fartherp.spring.boot.shiro.autoconfigure.ShiroRedissonProperties",
+      "sourceMethod": "getSession()"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.github.fartherp.spring.boot.shiro.autoconfigure.ShiroRedissonProperties$ShiroRedissonCache",
+      "name": "shiro.redisson.cache.cache-key-prefix",
+      "description": "the shiro redisson cache key prefix.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.github.fartherp.spring.boot.shiro.autoconfigure.ShiroRedissonProperties$ShiroRedissonCache",
+      "name": "shiro.redisson.cache.ttl",
+      "description": "the shiro redisson cache ttl.",
+      "type": "java.lang.Long"
+    },
+    {
+      "sourceType": "com.github.fartherp.spring.boot.shiro.autoconfigure.ShiroRedissonProperties$ShiroRedissonCache",
+      "name": "shiro.redisson.cache.principal-id-field-name",
+      "description": "the shiro redisson cache principalIdFieldName.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.github.fartherp.spring.boot.shiro.autoconfigure.ShiroRedissonProperties$ShiroRedissonSession",
+      "name": "shiro.redisson.session.session-key-prefix",
+      "description": "the shiro redisson session key prefix.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.github.fartherp.spring.boot.shiro.autoconfigure.ShiroRedissonProperties$ShiroRedissonSession",
+      "name": "shiro.redisson.session.expire-type",
+      "description": "the shiro redisson session of expireType.",
+      "type": "com.github.fartherp.shiro.ExpireType"
+    },
+    {
+      "sourceType": "com.github.fartherp.spring.boot.shiro.autoconfigure.ShiroRedissonProperties$ShiroRedissonSession",
+      "name": "shiro.redisson.session.session-in-memory-enabled",
+      "description": "the shiro redisson session of sessionInMemoryEnabled.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.github.fartherp.spring.boot.shiro.autoconfigure.ShiroRedissonProperties$ShiroRedissonSession",
+      "name": "shiro.redisson.session.session-in-memory-timeout",
+      "description": "the shiro redisson session of sessionInMemoryTimeout.",
+      "type": "java.lang.Long"
+    }
+  ]
+}

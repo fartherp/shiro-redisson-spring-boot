@@ -1,0 +1,1 @@
+provides: shiro-redisson-spring-boot-autoconfigure,shiro-redisson,shiro-spring-boot-web-starter
