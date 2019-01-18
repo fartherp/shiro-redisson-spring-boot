@@ -270,6 +270,11 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>3.9.1</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

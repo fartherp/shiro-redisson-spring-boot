@@ -20,11 +20,11 @@ import org.apache.shiro.spring.config.web.autoconfigure.ShiroWebAutoConfiguratio
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.redisson.api.RedissonClient;
+import org.redisson.spring.starter.RedissonAutoConfiguration;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnNotWebApplication;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
@@ -41,9 +41,9 @@ import java.util.stream.Collectors;
  * Date: 2019/1/14
  */
 @Configuration
-@AutoConfigureBefore(ShiroWebAutoConfiguration.class)
-@ConditionalOnClass(RedissonClient.class)
 @ConditionalOnBean(Realm.class)
+@AutoConfigureAfter(RedissonAutoConfiguration.class)
+@AutoConfigureBefore(ShiroWebAutoConfiguration.class)
 @EnableConfigurationProperties(ShiroRedissonProperties.class)
 public class ShiroRedissonAutoConfiguration {
 
@@ -55,8 +55,8 @@ public class ShiroRedissonAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
-    public RedisCacheManager cacheManager(RedissonClient redissonClient) {
-        RedisCacheManager cacheManager = new RedisCacheManager(redissonClient);
+    public RedisCacheManager cacheManager(RedissonClient redisson) {
+        RedisCacheManager cacheManager = new RedisCacheManager(redisson);
         cacheManager.setKeyPrefix(properties.getCache().getCacheKeyPrefix());
         cacheManager.setTtl(properties.getCache().getTtl());
         cacheManager.setPrincipalIdFieldName(properties.getCache().getPrincipalIdFieldName());
