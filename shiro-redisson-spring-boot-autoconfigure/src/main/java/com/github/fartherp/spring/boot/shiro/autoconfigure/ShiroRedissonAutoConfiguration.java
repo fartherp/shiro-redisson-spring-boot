@@ -40,6 +40,7 @@ import java.util.stream.Collectors;
  * Author: CK
  * Date: 2019/1/14
  */
+@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 @Configuration
 @ConditionalOnBean(Realm.class)
 @AutoConfigureAfter(RedissonAutoConfiguration.class)
