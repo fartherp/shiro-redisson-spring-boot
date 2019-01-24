@@ -1,13 +1,20 @@
 # shiro-redisson-spring-boot-starter
-shiro redison integration with Spring Boot
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.fartherp.spring.boot/shiro-redisson-spring-boot-starter/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.fartherp.spring.boot/shiro-redisson-spring-boot-starter/)
 
-# 如何使用？
-1. 引入Maven依赖或下载jar包
+Shiro Redisson Spring Boot Starter 用于帮助你在Spring Boot项目中轻松集成shiro-redisson。
 
-``` xml
+## 如何使用？
+1. 在 Spring Boot 项目中加入```shiro-redisson-spring-boot-starter```依赖
+
+    ```Maven```
+    ``` xml
     <dependency>
         <groupId>com.github.fartherp.spring.boot</groupId>
         <artifactId>shiro-redisson-spring-boot-starter</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </dependency>
-```
+    ```
+    ```Gradle```
+    ```
+    compile 'com.github.fartherp.spring.boot:shiro-redisson-spring-boot-starter:1.0.1'
+    ```
