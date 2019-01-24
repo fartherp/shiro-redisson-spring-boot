@@ -1,4 +1,4 @@
-# shiro-redisson-spring-boot-starter
+# Shiro Redisson Spring Boot Starter
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.fartherp.spring.boot/shiro-redisson-spring-boot-starter/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.fartherp.spring.boot/shiro-redisson-spring-boot-starter/)
 
 Shiro Redisson Spring Boot Starter 用于帮助你在Spring Boot项目中轻松集成shiro-redisson。
