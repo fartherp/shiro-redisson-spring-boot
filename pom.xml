@@ -28,6 +28,8 @@
         <shiro-redisson-version>1.0.7</shiro-redisson-version>
         <spring-boot.version>2.1.1.RELEASE</spring-boot.version>
         <shiro-spring-boot.version>1.4.0</shiro-spring-boot.version>
+        <coveralls.version>4.3.0</coveralls.version>
+        <jacoco.version>0.8.2</jacoco.version>
     </properties>
 
     <scm>
@@ -88,6 +90,14 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.eluder.coveralls</groupId>
+                        <artifactId>coveralls-maven-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
                     </plugin>
                 </plugins>
                 <resources>
@@ -220,6 +230,24 @@
                             <phase>verify</phase>
                             <goals>
                                 <goal>sign</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.eluder.coveralls</groupId>
+                    <artifactId>coveralls-maven-plugin</artifactId>
+                    <version>${coveralls.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${jacoco.version}</version>
+                    <executions>
+                        <execution>
+                            <id>prepare-agent</id>
+                            <goals>
+                                <goal>prepare-agent</goal>
                             </goals>
                         </execution>
                     </executions>
