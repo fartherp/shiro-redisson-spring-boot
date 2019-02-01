@@ -61,6 +61,12 @@
       "name": "shiro.redisson.session.session-in-memory-timeout",
       "description": "the shiro redisson session of sessionInMemoryTimeout.",
       "type": "java.lang.Long"
+    },
+    {
+      "sourceType": "com.github.fartherp.spring.boot.shiro.autoconfigure.ShiroRedissonProperties$ShiroRedissonSession",
+      "name": "shiro.redisson.session.codec-type",
+      "description": "the shiro redisson session of codecType.",
+      "type": "com.github.fartherp.shiro.CodecType"
     }
   ]
 }

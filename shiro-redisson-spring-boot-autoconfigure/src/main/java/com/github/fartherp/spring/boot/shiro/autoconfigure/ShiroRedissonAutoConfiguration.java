@@ -72,6 +72,7 @@ public class ShiroRedissonAutoConfiguration {
         sessionDAO.setExpire(properties.getSession().getExpireType());
         sessionDAO.setSessionInMemoryEnabled(properties.getSession().isSessionInMemoryEnabled());
         sessionDAO.setSessionInMemoryTimeout(properties.getSession().getSessionInMemoryTimeout());
+        sessionDAO.setCodec(properties.getSession().getCodecType());
         return sessionDAO;
     }
 

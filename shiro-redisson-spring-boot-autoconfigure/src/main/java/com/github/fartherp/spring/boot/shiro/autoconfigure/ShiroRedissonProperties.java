@@ -4,6 +4,7 @@
 
 package com.github.fartherp.spring.boot.shiro.autoconfigure;
 
+import com.github.fartherp.shiro.CodecType;
 import com.github.fartherp.shiro.ExpireType;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
@@ -62,6 +63,7 @@ public class ShiroRedissonProperties {
         private ExpireType expireType;
         private boolean sessionInMemoryEnabled;
         private long sessionInMemoryTimeout;
+        private CodecType codecType;
 
         public String getSessionKeyPrefix() {
             return sessionKeyPrefix;
@@ -93,6 +95,14 @@ public class ShiroRedissonProperties {
 
         public void setSessionInMemoryTimeout(long sessionInMemoryTimeout) {
             this.sessionInMemoryTimeout = sessionInMemoryTimeout;
+        }
+
+        public CodecType getCodecType() {
+            return codecType;
+        }
+
+        public void setCodecType(CodecType codecType) {
+            this.codecType = codecType;
         }
     }
 }
