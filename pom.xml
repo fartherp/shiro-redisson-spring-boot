@@ -24,7 +24,7 @@
         <encoding.charset>UTF-8</encoding.charset>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <profiles.dir>src/main/profiles</profiles.dir>
-        <shiro-redisson-version>1.0.9</shiro-redisson-version>
+        <shiro-redisson-version>1.1.0</shiro-redisson-version>
         <spring-boot.version>2.1.1.RELEASE</spring-boot.version>
         <shiro-spring-boot.version>1.4.0</shiro-spring-boot.version>
         <coveralls.version>4.3.0</coveralls.version>
