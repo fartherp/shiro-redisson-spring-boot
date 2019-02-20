@@ -16,10 +16,10 @@ Shiro Redisson Spring Boot Starter 用于帮助你在Spring Boot项目中轻松�
     <dependency>
         <groupId>com.github.fartherp.spring.boot</groupId>
         <artifactId>shiro-redisson-spring-boot-starter</artifactId>
-        <version>1.0.4</version>
+        <version>1.0.5</version>
     </dependency>
     ```
     ```Gradle```
     ```
-    compile 'com.github.fartherp.spring.boot:shiro-redisson-spring-boot-starter:1.0.4'
+    compile 'com.github.fartherp.spring.boot:shiro-redisson-spring-boot-starter:1.0.5'
     ```
