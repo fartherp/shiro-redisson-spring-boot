@@ -29,6 +29,7 @@
         <shiro-spring-boot.version>1.4.0</shiro-spring-boot.version>
         <coveralls.version>4.3.0</coveralls.version>
         <jacoco.version>0.8.2</jacoco.version>
+        <redisson-boot.version>3.11.0</redisson-boot.version>
     </properties>
 
     <scm>
@@ -292,7 +293,7 @@
             <dependency>
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson-spring-boot-starter</artifactId>
-                <version>3.9.1</version>
+                <version>${redisson-boot.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
