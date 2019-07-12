@@ -70,8 +70,8 @@ public class ShiroRedissonAutoConfiguration {
     public SessionDAO sessionDAO(RedisCacheManager cacheManager) {
 		ShiroRedissonProperties.ShiroRedissonSession shiroRedissonSession = properties.getSession();
         RedisSessionDAO sessionDAO = new RedisSessionDAO(cacheManager, shiroRedissonSession.getSessionKeyPrefix(),
-			shiroRedissonSession.getExpireType().type, shiroRedissonSession.isSessionInMemoryEnabled(),
-			shiroRedissonSession.getSessionInMemoryTimeout(), shiroRedissonSession.getCodecType().getCodec(),
+			shiroRedissonSession.getExpireType(), shiroRedissonSession.isSessionInMemoryEnabled(),
+			shiroRedissonSession.getSessionInMemoryTimeout(), shiroRedissonSession.getCodecType(),
 			shiroRedissonSession.getSessionLruSize());
         return sessionDAO;
     }
