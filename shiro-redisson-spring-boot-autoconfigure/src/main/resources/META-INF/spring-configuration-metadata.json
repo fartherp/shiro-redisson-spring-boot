@@ -45,6 +45,18 @@
       "type": "java.lang.Integer"
     },
     {
+      "sourceType": "com.github.fartherp.spring.boot.shiro.autoconfigure.ShiroRedissonProperties$ShiroRedissonCache",
+      "name": "shiro.redisson.cache.codec-type",
+      "description": "the codec type of the shiro redisson cache.",
+      "type": "com.github.fartherp.shiro.CodecType"
+    },
+    {
+      "sourceType": "com.github.fartherp.spring.boot.shiro.autoconfigure.ShiroRedissonProperties$ShiroRedissonCache",
+      "name": "shiro.redisson.cache.codec-keys-type",
+      "description": "the codec keys type of the shiro redisson cache.",
+      "type": "com.github.fartherp.shiro.CodecType"
+    },
+    {
       "sourceType": "com.github.fartherp.spring.boot.shiro.autoconfigure.ShiroRedissonProperties$ShiroRedissonSession",
       "name": "shiro.redisson.session.session-key-prefix",
       "description": "the key prefix of the shiro redisson session.",

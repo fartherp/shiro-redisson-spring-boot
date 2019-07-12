@@ -61,7 +61,8 @@ public class ShiroRedissonAutoConfiguration {
 		ShiroRedissonProperties.ShiroRedissonCache shiroRedissonCache = properties.getCache();
         RedisCacheManager cacheManager = new RedisCacheManager(redisson,
 			shiroRedissonCache.getCacheKeyPrefix(), shiroRedissonCache.getPrincipalIdFieldName(),
-			shiroRedissonCache.getTtl(), shiroRedissonCache.getCacheLruSize());
+			shiroRedissonCache.getTtl(), shiroRedissonCache.getCacheLruSize(),
+			shiroRedissonCache.getCodecType(), shiroRedissonCache.getCodecKeysType());
         return cacheManager;
     }
 

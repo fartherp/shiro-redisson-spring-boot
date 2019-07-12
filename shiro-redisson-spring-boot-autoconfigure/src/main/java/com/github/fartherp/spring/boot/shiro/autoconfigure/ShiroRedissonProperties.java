@@ -34,6 +34,8 @@ public class ShiroRedissonProperties {
         private long ttl;
         private String principalIdFieldName;
         private int cacheLruSize;
+        private CodecType codecType;
+        private CodecType codecKeysType;
 
         public String getCacheKeyPrefix() {
             return cacheKeyPrefix;
@@ -65,6 +67,22 @@ public class ShiroRedissonProperties {
 
 		public void setCacheLruSize(int cacheLruSize) {
 			this.cacheLruSize = cacheLruSize;
+		}
+
+		public CodecType getCodecType() {
+			return codecType;
+		}
+
+		public void setCodecType(CodecType codecType) {
+			this.codecType = codecType;
+		}
+
+		public CodecType getCodecKeysType() {
+			return codecKeysType;
+		}
+
+		public void setCodecKeysType(CodecType codecKeysType) {
+			this.codecKeysType = codecKeysType;
 		}
 	}
 
