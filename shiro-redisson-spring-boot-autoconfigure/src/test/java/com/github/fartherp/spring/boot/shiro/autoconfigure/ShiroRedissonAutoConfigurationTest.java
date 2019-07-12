@@ -17,12 +17,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * <pre>
- *  @author: cuiyuqiang
- *  @email: cuiyuqiang@ddjf.com.cn
- *  @date: 2019/6/20 9:29
- *  @project: risk-control-parent
- * </pre>
+ * Created by IntelliJ IDEA.
+ *
+ * @author CK
+ * @date 2019/6/20
  */
 public abstract class ShiroRedissonAutoConfigurationTest {
 

@@ -10,8 +10,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
  * Created by IntelliJ IDEA.
- * Author: CK
- * Date: 2019/1/14
+ *
+ * @author CK
+ * @date 2019/1/14
  */
 @ConfigurationProperties(prefix = "shiro.redisson")
 public class ShiroRedissonProperties {
@@ -32,6 +33,7 @@ public class ShiroRedissonProperties {
         private String cacheKeyPrefix;
         private long ttl;
         private String principalIdFieldName;
+        private int cacheLruSize;
 
         public String getCacheKeyPrefix() {
             return cacheKeyPrefix;
@@ -56,7 +58,15 @@ public class ShiroRedissonProperties {
         public void setPrincipalIdFieldName(String principalIdFieldName) {
             this.principalIdFieldName = principalIdFieldName;
         }
-    }
+
+		public int getCacheLruSize() {
+			return cacheLruSize;
+		}
+
+		public void setCacheLruSize(int cacheLruSize) {
+			this.cacheLruSize = cacheLruSize;
+		}
+	}
 
     static class ShiroRedissonSession {
         private String sessionKeyPrefix;
@@ -64,6 +74,7 @@ public class ShiroRedissonProperties {
         private boolean sessionInMemoryEnabled;
         private long sessionInMemoryTimeout;
         private CodecType codecType;
+        private int sessionLruSize;
 
         public String getSessionKeyPrefix() {
             return sessionKeyPrefix;
@@ -104,5 +115,13 @@ public class ShiroRedissonProperties {
         public void setCodecType(CodecType codecType) {
             this.codecType = codecType;
         }
-    }
+
+		public int getSessionLruSize() {
+			return sessionLruSize;
+		}
+
+		public void setSessionLruSize(int sessionLruSize) {
+			this.sessionLruSize = sessionLruSize;
+		}
+	}
 }

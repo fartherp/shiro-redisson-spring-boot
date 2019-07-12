@@ -4,7 +4,8 @@
 
 /**
  * Created by IntelliJ IDEA.
- * Author: CK
- * Date: 2019/1/14
+ *
+ * @author CK
+ * @date 2019/1/14
  */
 package com.github.fartherp.spring.boot.shiro.autoconfigure;

@@ -37,8 +37,9 @@ import java.util.stream.Collectors;
 
 /**
  * Created by IntelliJ IDEA.
- * Author: CK
- * Date: 2019/1/14
+ *
+ * @author CK
+ * @date 2019/1/14
  */
 @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 @Configuration
@@ -57,22 +58,21 @@ public class ShiroRedissonAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean
     public RedisCacheManager cacheManager(RedissonClient redisson) {
-        RedisCacheManager cacheManager = new RedisCacheManager(redisson);
-        cacheManager.setKeyPrefix(properties.getCache().getCacheKeyPrefix());
-        cacheManager.setTtl(properties.getCache().getTtl());
-        cacheManager.setPrincipalIdFieldName(properties.getCache().getPrincipalIdFieldName());
+		ShiroRedissonProperties.ShiroRedissonCache shiroRedissonCache = properties.getCache();
+        RedisCacheManager cacheManager = new RedisCacheManager(redisson,
+			shiroRedissonCache.getCacheKeyPrefix(), shiroRedissonCache.getPrincipalIdFieldName(),
+			shiroRedissonCache.getTtl(), shiroRedissonCache.getCacheLruSize());
         return cacheManager;
     }
 
     @Bean
     @ConditionalOnMissingBean
     public SessionDAO sessionDAO(RedisCacheManager cacheManager) {
-        RedisSessionDAO sessionDAO = new RedisSessionDAO(cacheManager);
-        sessionDAO.setSessionKeyPrefix(properties.getSession().getSessionKeyPrefix());
-        sessionDAO.setExpire(properties.getSession().getExpireType());
-        sessionDAO.setSessionInMemoryEnabled(properties.getSession().isSessionInMemoryEnabled());
-        sessionDAO.setSessionInMemoryTimeout(properties.getSession().getSessionInMemoryTimeout());
-        sessionDAO.setCodec(properties.getSession().getCodecType());
+		ShiroRedissonProperties.ShiroRedissonSession shiroRedissonSession = properties.getSession();
+        RedisSessionDAO sessionDAO = new RedisSessionDAO(cacheManager, shiroRedissonSession.getSessionKeyPrefix(),
+			shiroRedissonSession.getExpireType().type, shiroRedissonSession.isSessionInMemoryEnabled(),
+			shiroRedissonSession.getSessionInMemoryTimeout(), shiroRedissonSession.getCodecType().getCodec(),
+			shiroRedissonSession.getSessionLruSize());
         return sessionDAO;
     }
 

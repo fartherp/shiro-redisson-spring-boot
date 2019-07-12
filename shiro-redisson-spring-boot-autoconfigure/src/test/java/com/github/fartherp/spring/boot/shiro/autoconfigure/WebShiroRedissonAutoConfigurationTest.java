@@ -27,12 +27,10 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * <pre>
- *  @author: cuiyuqiang
- *  @email: cuiyuqiang@ddjf.com.cn
- *  @date: 2019/6/20 11:13
- *  @project: risk-control-parent
- * </pre>
+ * Created by IntelliJ IDEA.
+ *
+ * @author CK
+ * @date 2019/6/20
  */
 public class WebShiroRedissonAutoConfigurationTest extends ShiroRedissonAutoConfigurationTest {
 	private static final MockServletWebServerFactory webServerFactory = new MockServletWebServerFactory();
