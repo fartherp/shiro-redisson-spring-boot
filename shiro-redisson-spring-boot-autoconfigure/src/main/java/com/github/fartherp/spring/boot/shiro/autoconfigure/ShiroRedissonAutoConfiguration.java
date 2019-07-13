@@ -97,7 +97,8 @@ public class ShiroRedissonAutoConfiguration {
     @Bean
     @ConditionalOnNotWebApplication
     @ConditionalOnMissingBean
-    public SessionManager sessionManager(SessionDAO redisSessionDAO, ObjectProvider<SessionListener> sessionListenersProvider) {
+    public SessionManager sessionManager(SessionDAO redisSessionDAO,
+			ObjectProvider<SessionListener> sessionListenersProvider) {
         List<SessionListener> sessionListeners = sessionListenersProvider.stream().collect(Collectors.toList());
         DefaultSessionManager sessionManager = new DefaultSessionManager();
         sessionManager.setSessionDAO(redisSessionDAO);
@@ -108,7 +109,8 @@ public class ShiroRedissonAutoConfiguration {
     @Bean
     @ConditionalOnWebApplication
     @ConditionalOnMissingBean
-    public SessionManager webSessionManager(SessionDAO redisSessionDAO, ObjectProvider<SessionListener> sessionListenersProvider) {
+    public SessionManager webSessionManager(SessionDAO redisSessionDAO,
+			ObjectProvider<SessionListener> sessionListenersProvider) {
         List<SessionListener> sessionListeners = sessionListenersProvider.stream().collect(Collectors.toList());
         DefaultWebSessionManager webSessionManager = new DefaultWebSessionManager();
         webSessionManager.setSessionDAO(redisSessionDAO);
@@ -119,7 +121,8 @@ public class ShiroRedissonAutoConfiguration {
     @Bean
     @ConditionalOnNotWebApplication
     @ConditionalOnMissingBean
-    public SessionsSecurityManager securityManager(CacheManager cacheManager, SessionManager sessionManager, List<Realm> realms) {
+    public SessionsSecurityManager securityManager(CacheManager cacheManager,
+			SessionManager sessionManager, List<Realm> realms) {
         DefaultSecurityManager securityManager = new DefaultSecurityManager(realms);
         securityManager.setSessionManager(sessionManager);
         securityManager.setCacheManager(cacheManager);
@@ -129,7 +132,8 @@ public class ShiroRedissonAutoConfiguration {
     @Bean
     @ConditionalOnWebApplication
     @ConditionalOnMissingBean
-    public SessionsSecurityManager webSecurityManager(CacheManager cacheManager, SessionManager sessionManager, List<Realm> realms) {
+    public SessionsSecurityManager webSecurityManager(CacheManager cacheManager,
+			SessionManager sessionManager, List<Realm> realms) {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager(realms);
         securityManager.setSessionManager(sessionManager);
         securityManager.setCacheManager(cacheManager);
