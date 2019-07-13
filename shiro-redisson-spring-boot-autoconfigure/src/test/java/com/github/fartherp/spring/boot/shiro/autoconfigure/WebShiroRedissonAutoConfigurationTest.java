@@ -25,6 +25,7 @@ import org.apache.shiro.session.mgt.eis.SessionDAO;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.junit.Test;
+import org.redisson.codec.JsonJacksonCodec;
 import org.redisson.spring.starter.RedissonAutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
 import org.springframework.boot.test.context.runner.WebApplicationContextRunner;
@@ -61,11 +62,14 @@ public class WebShiroRedissonAutoConfigurationTest extends ShiroRedissonAutoConf
 	@Test
 	public void testOverrideCacheManager() {
 		this.contextRunner.withPropertyValues("shiro.redisson.cache.cache-key-prefix:a",
-			"shiro.redisson.cache.ttl:1", "shiro.redisson.cache.principal-id-field-name:testId")
+			"shiro.redisson.cache.ttl:1", "shiro.redisson.cache.principal-id-field-name:testId",
+			"shiro.redisson.cache.cache-lru-size:1", "shiro.redisson.cache.codec-type:json_jackson_codec",
+			"shiro.redisson.cache.codec-keys-type:json_jackson_codec")
 			.run((context) -> {
 				RedisCacheManager redisCacheManager = context.getBean(RedisCacheManager.class);
 				assertThat(redisCacheManager.getTtl()).isEqualTo(1);
 				assertThat(redisCacheManager.getPrincipalIdFieldName()).isEqualTo("testId");
+				assertThat(redisCacheManager.getCacheCodec()).isInstanceOf(JsonJacksonCodec.class);
 			});
 	}
 
@@ -80,7 +84,8 @@ public class WebShiroRedissonAutoConfigurationTest extends ShiroRedissonAutoConf
 	public void testOverrideSessionDAO() {
 		this.contextRunner.withPropertyValues("shiro.redisson.session.session-key-prefix:a",
 			"shiro.redisson.session.expire-type:no_expire", "shiro.redisson.session.session-in-memory-enabled:false",
-			"shiro.redisson.session.session-in-memory-timeout:1", "shiro.redisson.session.codec-type:long_codec")
+			"shiro.redisson.session.session-in-memory-timeout:1", "shiro.redisson.session.codec-type:long_codec",
+			"shiro.redisson.session.session-lru-size:100")
 			.run((context) -> {
 				RedisSessionDAO redisSessionDAO = context.getBean(RedisSessionDAO.class);
 				assertThat(redisSessionDAO.getSessionKeyPrefix()).isEqualTo("a");
