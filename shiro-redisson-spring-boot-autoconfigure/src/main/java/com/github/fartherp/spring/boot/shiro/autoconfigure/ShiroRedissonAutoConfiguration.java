@@ -47,7 +47,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Created by IntelliJ IDEA.
+ * Shiro Redisson AutoConfiguration.
  *
  * @author CK
  * @date 2019/1/14
@@ -70,22 +70,20 @@ public class ShiroRedissonAutoConfiguration {
     @ConditionalOnMissingBean
     public RedisCacheManager cacheManager(RedissonClient redisson) {
 		ShiroRedissonProperties.ShiroRedissonCache shiroRedissonCache = properties.getCache();
-        RedisCacheManager cacheManager = new RedisCacheManager(redisson,
-			shiroRedissonCache.getCacheKeyPrefix(), shiroRedissonCache.getPrincipalIdFieldName(),
-			shiroRedissonCache.getTtl(), shiroRedissonCache.getCacheLruSize(),
-			shiroRedissonCache.getCodecType(), shiroRedissonCache.getCodecKeysType());
-        return cacheManager;
+        return new RedisCacheManager(redisson,
+			shiroRedissonCache.getCacheKeyPrefix(), shiroRedissonCache.getTtl(),
+			shiroRedissonCache.getCacheLruSize(), shiroRedissonCache.getCodecType(),
+			shiroRedissonCache.getCodecKeysType());
     }
 
     @Bean
     @ConditionalOnMissingBean
     public SessionDAO sessionDAO(RedisCacheManager cacheManager) {
 		ShiroRedissonProperties.ShiroRedissonSession shiroRedissonSession = properties.getSession();
-        RedisSessionDAO sessionDAO = new RedisSessionDAO(cacheManager, shiroRedissonSession.getSessionKeyPrefix(),
+		return new RedisSessionDAO(cacheManager, shiroRedissonSession.getSessionKeyPrefix(),
 			shiroRedissonSession.getExpireType(), shiroRedissonSession.isSessionInMemoryEnabled(),
 			shiroRedissonSession.getSessionInMemoryTimeout(), shiroRedissonSession.getCodecType(),
 			shiroRedissonSession.getSessionLruSize());
-        return sessionDAO;
     }
 
     @Bean

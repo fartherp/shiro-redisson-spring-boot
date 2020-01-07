@@ -20,7 +20,7 @@ import com.github.fartherp.shiro.ExpireType;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * Created by IntelliJ IDEA.
+ * Shiro Redisson Properties.
  *
  * @author CK
  * @date 2019/1/14
@@ -43,7 +43,6 @@ public class ShiroRedissonProperties {
     static class ShiroRedissonCache {
         private String cacheKeyPrefix;
         private long ttl;
-        private String principalIdFieldName;
         private int cacheLruSize;
         private CodecType codecType;
         private CodecType codecKeysType;
@@ -62,14 +61,6 @@ public class ShiroRedissonProperties {
 
         public void setTtl(long ttl) {
             this.ttl = ttl;
-        }
-
-        public String getPrincipalIdFieldName() {
-            return principalIdFieldName;
-        }
-
-        public void setPrincipalIdFieldName(String principalIdFieldName) {
-            this.principalIdFieldName = principalIdFieldName;
         }
 
 		public int getCacheLruSize() {

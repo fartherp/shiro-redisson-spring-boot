@@ -62,13 +62,12 @@ public class WebShiroRedissonAutoConfigurationTest extends ShiroRedissonAutoConf
 	@Test
 	public void testOverrideCacheManager() {
 		this.contextRunner.withPropertyValues("shiro.redisson.cache.cache-key-prefix:a",
-			"shiro.redisson.cache.ttl:1", "shiro.redisson.cache.principal-id-field-name:testId",
-			"shiro.redisson.cache.cache-lru-size:1", "shiro.redisson.cache.codec-type:json_jackson_codec",
+			"shiro.redisson.cache.ttl:1", "shiro.redisson.cache.cache-lru-size:1",
+			"shiro.redisson.cache.codec-type:json_jackson_codec",
 			"shiro.redisson.cache.codec-keys-type:json_jackson_codec")
 			.run((context) -> {
 				RedisCacheManager redisCacheManager = context.getBean(RedisCacheManager.class);
 				assertThat(redisCacheManager.getTtl()).isEqualTo(1);
-				assertThat(redisCacheManager.getPrincipalIdFieldName()).isEqualTo("testId");
 				assertThat(redisCacheManager.getCacheCodec()).isInstanceOf(JsonJacksonCodec.class);
 			});
 	}
