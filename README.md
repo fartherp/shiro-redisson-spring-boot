@@ -8,3 +8,4 @@
 [![Project Stats](https://www.openhub.net/p/shiro-redisson-spring-boot/widgets/project_thin_badge.gif)](https://www.openhub.net/p/shiro-redisson-spring-boot)
 
 Shiro Redisson Spring Boot Starter 用于帮助你在Spring Boot项目中轻松集成shiro-redisson。
+##[样例](https://github.com/fartherp/spring-boot-demo)
