@@ -1,27 +1,29 @@
 language: java
 
 jdk:
-  - oraclejdk8
+  - openjdk-ea
+  - openjdk13
+  - openjdk12
+  - openjdk11
+  - openjdk8
 
 services:
+  - docker
   - redis-server
-
-before_install:
-  - chmod +x mvnw
-
-install: ./mvnw install -DskipTests=true -B -V
-script: ./mvnw clean test -B
-after_success:
-  - ./mvnw clean test jacoco:report coveralls:report -q -DrepoToken="${COVERALLS_TOKEN}" -Dmaven.test.redirectTestOutputToFile=true
-
-notifications:
-  email: false
-
-sudo: false
 
 cache:
   directories:
     - $HOME/.m2
+
+before_install:
+  - chmod +x mvnw
+
+after_success:
+  - chmod -R 777 ./travis/after_success.sh
+  - ./travis/after_success.sh
+
+notifications:
+  email: false
 
 env:
   global:
