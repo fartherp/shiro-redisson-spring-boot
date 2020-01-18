@@ -22,7 +22,7 @@
 	<parent>
 		<groupId>com.github.fartherp</groupId>
 		<artifactId>fartherp-parent</artifactId>
-		<version>1-SNAPSHOT</version>
+		<version>1</version>
 		<relativePath />
 	</parent>
 
@@ -40,7 +40,7 @@
     <description>shiro redisson integration with Spring Boot</description>
 
     <properties>
-        <shiro-redisson-version>1.1.4-SNAPSHOT</shiro-redisson-version>
+        <shiro-redisson-version>1.1.4</shiro-redisson-version>
         <spring-boot.version>2.1.1.RELEASE</spring-boot.version>
         <shiro-spring-boot.version>1.4.0</shiro-spring-boot.version>
         <redisson-boot.version>3.11.0</redisson-boot.version>
@@ -66,7 +66,7 @@
     </issueManagement>
     <ciManagement>
         <system>Travis CI</system>
-        <url>https://travis-ci.com/fartherp/shiro-redisson-spring-boot</url>
+        <url>https://travis-ci.org/fartherp/shiro-redisson-spring-boot</url>
     </ciManagement>
     <distributionManagement>
         <repository>
