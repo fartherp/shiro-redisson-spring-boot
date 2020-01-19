@@ -29,7 +29,7 @@
     <groupId>com.github.fartherp.spring.boot</groupId>
     <artifactId>shiro-redisson-spring-boot</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.9-SNAPSHOT</version>
+    <version>1.0.8-SNAPSHOT</version>
     <modules>
         <module>shiro-redisson-spring-boot-autoconfigure</module>
         <module>shiro-redisson-spring-boot-starter</module>
