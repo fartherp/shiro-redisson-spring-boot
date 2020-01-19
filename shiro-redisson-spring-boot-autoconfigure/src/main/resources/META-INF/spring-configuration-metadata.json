@@ -34,12 +34,6 @@
     },
     {
       "sourceType": "com.github.fartherp.spring.boot.shiro.autoconfigure.ShiroRedissonProperties$ShiroRedissonCache",
-      "name": "shiro.redisson.cache.principal-id-field-name",
-      "description": "the principalIdFieldName of shiro redisson cache.",
-      "type": "java.lang.String"
-    },
-    {
-      "sourceType": "com.github.fartherp.spring.boot.shiro.autoconfigure.ShiroRedissonProperties$ShiroRedissonCache",
       "name": "shiro.redisson.cache.cache-lru-size",
       "description": "the lru size of shiro redisson cache.",
       "type": "java.lang.Integer"
