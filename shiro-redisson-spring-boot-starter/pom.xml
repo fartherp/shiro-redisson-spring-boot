@@ -20,11 +20,12 @@
     <parent>
         <artifactId>shiro-redisson-spring-boot</artifactId>
         <groupId>com.github.fartherp.spring.boot</groupId>
-        <version>1.0.8</version>
+        <version>1.0.9-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>shiro-redisson-spring-boot-starter</artifactId>
+  <version>1.0.8</version>
     <name>shiro-redisson-spring-boot-starter</name>
 
 	<build>
