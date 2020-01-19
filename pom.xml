@@ -29,7 +29,7 @@
     <groupId>com.github.fartherp.spring.boot</groupId>
     <artifactId>shiro-redisson-spring-boot</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.8-SNAPSHOT</version>
+    <version>1.0.8</version>
     <modules>
         <module>shiro-redisson-spring-boot-autoconfigure</module>
         <module>shiro-redisson-spring-boot-starter</module>
@@ -50,7 +50,7 @@
         <connection>scm:git:git@github.com:fartherp/shiro-redisson-spring-boot.git</connection>
         <developerConnection>scm:git:git@github.com:fartherp/shiro-redisson-spring-boot.git</developerConnection>
         <url>https://github.com/fartherp/shiro-redisson-spring-boot</url>
-        <tag>HEAD</tag>
+        <tag>v1.0.8</tag>
     </scm>
     <licenses>
         <license>
