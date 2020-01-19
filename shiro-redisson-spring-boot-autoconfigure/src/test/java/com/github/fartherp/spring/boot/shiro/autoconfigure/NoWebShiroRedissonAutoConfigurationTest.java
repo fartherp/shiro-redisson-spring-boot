@@ -43,7 +43,8 @@ public class NoWebShiroRedissonAutoConfigurationTest extends ShiroRedissonAutoCo
 	private ApplicationContextRunner contextRunner = new ApplicationContextRunner()
 		.withConfiguration(AutoConfigurations.of(RedissonAutoConfiguration.class, ShiroRedissonAutoConfiguration.class))
 		.withUserConfiguration(TestConfiguration.class)
-		.withPropertyValues("spring.redis.redisson.config:classpath:redisson.yaml");
+		.withPropertyValues("spring.redis.redisson.config:classpath:redisson.yaml",
+			"logging.level.org.springframework=info", "logging.level.org.redisson=info");
 
 	@Test
 	public void testDefaultCacheManager() {
