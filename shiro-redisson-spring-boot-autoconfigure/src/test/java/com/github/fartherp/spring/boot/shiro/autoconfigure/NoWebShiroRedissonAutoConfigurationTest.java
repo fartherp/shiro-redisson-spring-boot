@@ -43,14 +43,11 @@ public class NoWebShiroRedissonAutoConfigurationTest extends ShiroRedissonAutoCo
 	private ApplicationContextRunner contextRunner = new ApplicationContextRunner()
 		.withConfiguration(AutoConfigurations.of(RedissonAutoConfiguration.class, ShiroRedissonAutoConfiguration.class))
 		.withUserConfiguration(TestConfiguration.class)
-		.withPropertyValues("spring.redis.redisson.config:classpath:redisson.yaml",
-			"logging.level.org.springframework=info", "logging.level.org.redisson=info");
+		.withPropertyValues("spring.redis.redisson.config:classpath:redisson.yaml");
 
 	@Test
 	public void testDefaultCacheManager() {
-		this.contextRunner.run((context) -> {
-			assertThat(context.getBean(RedisCacheManager.class)).isNotNull();
-		});
+		this.contextRunner.run((context) -> assertThat(context.getBean(RedisCacheManager.class)).isNotNull());
 	}
 
 	@Test
@@ -68,9 +65,7 @@ public class NoWebShiroRedissonAutoConfigurationTest extends ShiroRedissonAutoCo
 
 	@Test
 	public void testDefaultSessionDAO() {
-		this.contextRunner.run((context) -> {
-			assertThat(context.getBean(SessionDAO.class)).isNotNull();
-		});
+		this.contextRunner.run((context) -> assertThat(context.getBean(SessionDAO.class)).isNotNull());
 	}
 
 	@Test

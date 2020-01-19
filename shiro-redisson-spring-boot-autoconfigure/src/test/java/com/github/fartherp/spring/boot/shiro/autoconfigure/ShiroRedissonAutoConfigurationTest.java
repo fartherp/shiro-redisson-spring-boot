@@ -26,6 +26,7 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.test.context.TestPropertySource;
 
 /**
  * Created by IntelliJ IDEA.
@@ -36,6 +37,7 @@ import org.springframework.context.annotation.Configuration;
 public abstract class ShiroRedissonAutoConfigurationTest {
 
 	@Configuration
+	@TestPropertySource(properties = {"logging.level.org.springframework=info", "logging.level.org.redisson=info"})
 	protected static class TestConfiguration {
 		@Bean
 		public HashedCredentialsMatcher hashedCredentialsMatcher() {
